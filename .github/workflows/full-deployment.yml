@@ -114,7 +114,7 @@ jobs:
             --tx-hash ${{ steps.deploy.outputs.tx_hash }}
 
       - name: Upload Deployment Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: deployment-report-${{ steps.deploy.outputs.timestamp }}
           path: |
@@ -155,7 +155,7 @@ jobs:
       - name: Run contract scan
         run: node scripts/scan-contracts.js
       - name: Upload contract scan artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: contract-scan-results
           path: contract_scan_results.json
