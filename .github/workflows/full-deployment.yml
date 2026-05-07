@@ -31,7 +31,7 @@ jobs:
       controller: ${{ steps.deploy.outputs.controller }}
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
           fetch-depth: 0
@@ -144,7 +144,7 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.deploy.result == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
